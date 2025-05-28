@@ -1,3 +1,9 @@
+export interface CreatorData {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
 export interface ClippingData {
   id: string;
   content: string;
@@ -5,6 +11,7 @@ export interface ClippingData {
   author: string;
   location: string;
   createdAt: string; // Or Date, if you prefer to handle date objects
+  creator: CreatorData; // Added creator information
 }
 
 export interface ClippingError {
