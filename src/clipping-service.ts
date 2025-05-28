@@ -1,4 +1,4 @@
-import type { ClippingData, ClippingError } from './types';
+import type { ClippingData, ClippingError } from './types'
 
 export class ClippingService {
   // Replace with your actual API endpoint and logic
@@ -6,11 +6,11 @@ export class ClippingService {
 
   public static async fetchClippingData(clippingId: string): Promise<ClippingData | ClippingError> {
     if (!clippingId) {
-      return { error: 'Clipping ID is required.' };
+      return { error: 'Clipping ID is required.' }
     }
 
     // TODO: Replace this mock implementation with an actual API call
-    console.log(`Fetching data for clippingId: ${clippingId}`); 
+    console.log(`Fetching data for clippingId: ${clippingId}`) 
     // Example using fetch API (uncomment and adapt when you have a real API):
     /*
     try {
@@ -36,8 +36,8 @@ export class ClippingService {
           author: 'Mock Author Name',
           location: 'Page 123',
           createdAt: new Date().toLocaleDateString(),
-        });
-      }, 500);
-    });
+        })
+      }, 500)
+    })
   }
 }

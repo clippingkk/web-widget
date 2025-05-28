@@ -1,6 +1,4 @@
-import { fileURLToPath } from 'node:url'
-import { extname, relative } from 'path'
-import { Plugin, defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
 // https://vite.dev/config/

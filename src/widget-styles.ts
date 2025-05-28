@@ -1,4 +1,4 @@
-import type { Theme } from './types';
+import type { Theme } from './types'
 
 export const getWidgetStyles = (theme: Theme): string => `
   :host {
@@ -30,4 +30,4 @@ export const getWidgetStyles = (theme: Theme): string => `
   .error {
     color: red;
   }
-`;
+`
