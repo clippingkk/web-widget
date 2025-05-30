@@ -31,7 +31,7 @@ jobs:
           cache: "pnpm"
       - name: Build
         run: pnpm install && pnpm run build
-      - run: pnpm run test:coverage
+      - run: pnpm exec playwright install && pnpm run test:coverage
     #   - name: Codecov
     #     uses: codecov/codecov-action@v5
     #     with:
