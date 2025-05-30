@@ -1,4 +1,4 @@
-declare module 'react' {
+declare global {
     namespace JSX {
       interface IntrinsicElements {
         'clippingkk-web-widget': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
