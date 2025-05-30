@@ -1,5 +1,9 @@
 import type { Preview } from '@storybook/web-components-vite'
 
+import { initialize, mswLoader } from 'msw-storybook-addon'
+
+initialize()
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -16,6 +20,7 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+  loaders: [mswLoader]
 }
 
 export default preview

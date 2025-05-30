@@ -2,9 +2,9 @@ import type { ClippingData, ClippingError, Theme, CreatorData } from './types'
 import { ClippingService } from './clipping-service'
 import { getWidgetStyles } from './widget-styles'
 
-const CDN_PREFIX = 'https://cdn.annatarhe.com/media/clippingkk'
+const CDN_PREFIX = 'https://ck-cdn.annatarhe.com/media/clippingkk'
 const LOGO_URL = 'https://ck-cdn.annatarhe.cn/logo-small.png'
-const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.cn'
+const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.com'
 
 export class ClippingkkWebWidget extends HTMLElement {
   private _clippingId: string | null = null

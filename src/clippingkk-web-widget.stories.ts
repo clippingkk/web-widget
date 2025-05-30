@@ -1,16 +1,51 @@
 import './clippingkk-web-widget' // Import the component
 import type { Meta, StoryObj } from '@storybook/web-components-vite'
 
+import { http, HttpResponse } from 'msw'
+const testingData = {
+  data: {
+    "clipping": {
+      "id": 20420,
+      "bookID": "1856494",
+      "title": "卡拉马佐夫兄弟",
+      "content": "我在想：“什么是地狱？”我认为，地狱就是“再也不能爱”这样的痛苦",
+      "createdAt": "2021-12-13T14:01:17Z",
+      "pageAt": "#6436-6437",
+      "visible": true,
+      "reactions": [],
+      "creator": {
+        "id": 1,
+        "name": "AnnatarHe",
+        "avatar": "https://avatars.githubusercontent.com/u/8704175?v=4"
+      }
+    }
+  }
+}
+
 // Define the component's metadata
 const meta: Meta = {
   title: 'ClippingkkWebWidget',
   component: 'clippingkk-web-widget',
   argTypes: {
-    clippingid: { control: 'text' },
+    clippingid: { control: 'number' },
     theme: {
       control: { type: 'select' },
       options: ['light', 'dark'],
     },
+  },
+  parameters: {
+    msw: {
+      handlers: [
+        http.post('https://clippingkk.annatarhe.cn/graphql', () => {
+          return HttpResponse.json(
+            testingData,
+            {
+              status: 200,
+            },
+          )
+        }),
+      ],
+    }
   },
   render: (args) => `<clippingkk-web-widget clippingid=${args.clippingid} theme=${args.theme}></clippingkk-web-widget>`,
 }
@@ -22,7 +57,7 @@ type Story = StoryObj;
 // Default story: Light theme with a clipping ID
 export const Default: Story = {
   args: {
-    clippingid: 'test-clipping-id-123',
+    clippingid: 8848,
     theme: 'light',
   },
 }
@@ -30,7 +65,7 @@ export const Default: Story = {
 // Dark theme story
 export const DarkTheme: Story = {
   args: {
-    clippingid: 'test-clipping-id-456',
+    clippingid: 8848,
     theme: 'dark',
   },
 }
