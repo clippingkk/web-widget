@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/clippingkk/web-widget/compare/v0.0.4...v0.0.5) (2025-05-30)
+
+
+### Bug Fixes
+
+* **type:** update React import ([55ae405](https://github.com/clippingkk/web-widget/commit/55ae405e10d371c0c74cb0445b01ad454d806d2f))
+
 ## [0.0.4](https://github.com/clippingkk/web-widget/compare/v0.0.3...v0.0.4) (2025-05-30)
 
 
