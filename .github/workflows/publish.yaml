@@ -3,7 +3,10 @@ on:
   push:
     branches:
       - master
-permissions: {}
+permissions:
+    contents: write
+    pull-requests: write
+    id-token: write
 jobs:
   publish:
     permissions:
