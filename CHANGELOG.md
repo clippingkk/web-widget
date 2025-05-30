@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/clippingkk/web-widget/compare/v0.0.3...v0.0.4) (2025-05-30)
+
+
+### Bug Fixes
+
+* **pkg:** update types path and add React import to type definitions ([c6ed1ad](https://github.com/clippingkk/web-widget/commit/c6ed1adfeb2c80c5ee7343263d95fd4b6d382f52))
+
 ## [0.0.3](https://github.com/clippingkk/web-widget/compare/v0.0.2...v0.0.3) (2025-05-30)
 
 
