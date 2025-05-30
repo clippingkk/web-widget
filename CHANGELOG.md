@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/clippingkk/web-widget/compare/v0.0.2...v0.0.3) (2025-05-30)
+
+
+### Bug Fixes
+
+* **types:** update type declaration from react module to global namespace ([b04a6d4](https://github.com/clippingkk/web-widget/commit/b04a6d4881e569bf88fbae077fedbbd81f0a597f))
+
 ## [0.0.2](https://github.com/clippingkk/web-widget/compare/v0.0.1...v0.0.2) (2025-05-30)
 
 
