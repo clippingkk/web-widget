@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.2](https://github.com/clippingkk/web-widget/compare/v0.0.1...v0.0.2) (2025-05-30)
+
+
+### Bug Fixes
+
+* **widget:** add configurable endpoint and React type definitions for web widget component ([137b3f0](https://github.com/clippingkk/web-widget/commit/137b3f0b07c5e5e014ef2fa15b07e4aac66ddd1a))
+
 ## 0.0.1 (2025-05-30)
 
 
