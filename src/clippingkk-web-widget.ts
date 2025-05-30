@@ -9,6 +9,7 @@ const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.com'
 export class ClippingkkWebWidget extends HTMLElement {
   private _clippingId: string | null = null
   private _theme: Theme = 'light'
+  private _endpoint: URL = new URL('https://clippingkk.annatarhe.com/graphql')
   private _shadowRoot: ShadowRoot
   private _clickHandler: (() => void) | null = null
 
@@ -18,7 +19,7 @@ export class ClippingkkWebWidget extends HTMLElement {
   }
 
   static get observedAttributes(): string[] {
-    return ['clippingid', 'theme']
+    return ['clippingid', 'theme', 'endpoint']
   }
 
   attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void {
@@ -30,6 +31,11 @@ export class ClippingkkWebWidget extends HTMLElement {
         break
       case 'theme':
         this._theme = newValue === 'dark' ? 'dark' : 'light'
+        break
+      case 'endpoint':
+        if (newValue) {
+          this._endpoint = new URL(newValue)
+        }
         break
     }
     this._render()
@@ -44,6 +50,12 @@ export class ClippingkkWebWidget extends HTMLElement {
     if (this.hasAttribute('theme')) {
       const themeAttr = this.getAttribute('theme')
       this._theme = themeAttr === 'dark' ? 'dark' : 'light'
+    }
+    if (this.hasAttribute('endpoint')) {
+      const endpointAttr = this.getAttribute('endpoint')
+      if (endpointAttr) {
+        this._endpoint = new URL(endpointAttr)
+      }
     }
     this._render()
   }
@@ -69,7 +81,7 @@ export class ClippingkkWebWidget extends HTMLElement {
       return
     }
 
-    const data = await ClippingService.fetchClippingData(this._clippingId)
+    const data = await ClippingService.fetchClippingData(this._endpoint, this._clippingId)
 
     if ((data as ClippingError).error) {
       contentElement.innerHTML = `<p class="error">Error: ${(data as ClippingError).error}</p>`

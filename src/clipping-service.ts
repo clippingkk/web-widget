@@ -1,7 +1,5 @@
 import type { ClippingData, ClippingError, CreatorData } from './types'
 
-const API_ENDPOINT = 'https://clippingkk.annatarhe.cn/graphql' // Adjust if your GraphQL endpoint is different
-
 // Raw types from the API response (based on old api.ts)
 interface ApiCreator {
   id: number;
@@ -57,7 +55,7 @@ const FETCH_CLIPPING_QUERY = `
 `
 
 export class ClippingService {
-  public static async fetchClippingData(clippingId: string): Promise<ClippingData | ClippingError> {
+  public static async fetchClippingData(endpoint: URL, clippingId: string): Promise<ClippingData | ClippingError> {
     if (!clippingId) {
       return { error: 'Clipping ID is required.' }
     }
@@ -68,7 +66,7 @@ export class ClippingService {
     }
 
     try {
-      const response = await fetch(API_ENDPOINT, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
