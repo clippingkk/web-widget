@@ -3,17 +3,13 @@ on:
   push:
     branches:
       - master
-permissions:
-    contents: write
-    pull-requests: write
-    issues: write
-    id-token: write
 jobs:
   publish:
     permissions:
       contents: write # to create release commit (google-github-actions/release-please-action)
       # contents: read
       pull-requests: write # to create release PR (google-github-actions/release-please-action)
+      issues: write
       id-token: write
     runs-on: ubuntu-latest
     strategy:
