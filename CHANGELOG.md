@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/clippingkk/web-widget/compare/v0.0.8...v0.0.9) (2025-05-31)
+
+
+### Bug Fixes
+
+* update logo URL to use new asset path ([e5809d3](https://github.com/clippingkk/web-widget/commit/e5809d35ee4e0c422bbbe713e1e52fe7b49cc457))
+
 ## [0.0.8](https://github.com/clippingkk/web-widget/compare/v0.0.7...v0.0.8) (2025-05-31)
 
 
