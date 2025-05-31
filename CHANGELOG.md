@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/clippingkk/web-widget/compare/v0.0.7...v0.0.8) (2025-05-31)
+
+
+### Bug Fixes
+
+* **widget:** rename widget props to match HTML attribute naming conventions ([0b96687](https://github.com/clippingkk/web-widget/commit/0b9668794fee4355783bd87f0b142f43821dcedc))
+
 ## [0.0.7](https://github.com/clippingkk/web-widget/compare/v0.0.6...v0.0.7) (2025-05-31)
 
 
