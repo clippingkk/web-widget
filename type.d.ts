@@ -1,4 +1,6 @@
 import * as React from 'react'
+import type { ClippingData } from './dist/clippingkk-web-widget'
+import { register, widgetName } from './dist/clippingkk-web-widget'
 
 declare module 'react' {
   namespace JSX {
@@ -12,4 +14,13 @@ declare module 'react' {
       };
     }
   }
+}
+
+export {
+  register,
+  widgetName,
+}
+
+export type {
+  ClippingData,
 }
