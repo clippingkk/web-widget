@@ -6,11 +6,11 @@ declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
       'clippingkk-web-widget': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'clipping-id'?: number;
+        'clippingid'?: number;
         theme?: 'light' | 'dark';
-        endpoint?: string;
+        endpoint?: `http${'s' | ''}://${string}`;
         /** ClippingData */
-        'clipping-data'?: string;
+        'clippingdata'?: string;
       };
     }
   }
