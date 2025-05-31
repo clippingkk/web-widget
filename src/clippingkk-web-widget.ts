@@ -9,7 +9,8 @@ const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.com'
 export class ClippingkkWebWidget extends HTMLElement {
   private _clippingId: string | null = null
   private _theme: Theme = 'light'
-  private _endpoint: URL = new URL('https://clippingkk.annatarhe.com/graphql')
+  private _endpoint: URL = new URL('https://clippingkk.annatarhe.com/api/v2/graphql')
+  private _clippingData: ClippingData | null = null
   private _shadowRoot: ShadowRoot
   private _clickHandler: (() => void) | null = null
 
@@ -19,14 +20,14 @@ export class ClippingkkWebWidget extends HTMLElement {
   }
 
   static get observedAttributes(): string[] {
-    return ['clippingid', 'theme', 'endpoint']
+    return ['clippingid', 'theme', 'endpoint', 'clippingdata']
   }
 
   attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void {
     if (oldValue === newValue) return
 
     switch (name) {
-      case 'clippingid':
+      case 'clippingId':
         this._clippingId = newValue
         break
       case 'theme':
@@ -35,6 +36,11 @@ export class ClippingkkWebWidget extends HTMLElement {
       case 'endpoint':
         if (newValue) {
           this._endpoint = new URL(newValue)
+        }
+        break
+      case 'clippingData':
+        if (newValue) {
+          this._clippingData = JSON.parse(newValue)
         }
         break
     }
@@ -53,8 +59,14 @@ export class ClippingkkWebWidget extends HTMLElement {
     }
     if (this.hasAttribute('endpoint')) {
       const endpointAttr = this.getAttribute('endpoint')
-      if (endpointAttr) {
+      if (endpointAttr && endpointAttr.startsWith('http')) {
         this._endpoint = new URL(endpointAttr)
+      }
+    }
+    if (this.hasAttribute('clippingdata')) {
+      const clippingDataAttr = this.getAttribute('clippingdata')
+      if (clippingDataAttr && clippingDataAttr.startsWith('{') && clippingDataAttr.endsWith('}')) {
+        this._clippingData = JSON.parse(clippingDataAttr)
       }
     }
     this._render()
@@ -81,7 +93,7 @@ export class ClippingkkWebWidget extends HTMLElement {
       return
     }
 
-    const data = await ClippingService.fetchClippingData(this._endpoint, this._clippingId)
+    const data = this._clippingData || await ClippingService.fetchClippingData(this._endpoint, this._clippingId)
 
     if ((data as ClippingError).error) {
       contentElement.innerHTML = `<p class="error">Error: ${(data as ClippingError).error}</p>`

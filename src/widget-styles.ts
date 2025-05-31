@@ -13,7 +13,7 @@ export const getWidgetStyles = (theme: Theme): string => `
   --avatar-size: 38px;
   font-display: swap;
   
-  --card-bg-actual: ${theme === 'dark' ? 'rgba(0, 0, 0, .4)' : 'rgba(255, 255, 255, .4)'};
+  --card-bg-actual: ${theme === 'dark' ? 'linear-gradient( 135deg, oklch(0.25 0.02 260), oklch(0.15 0.01 260))' : 'linear-gradient( 135deg, oklch(0.98 0.01 270), oklch(0.95 0.01 250))'};
   --text-color-actual: ${theme === 'dark' ? '#fff' : '#333'};
   --card-shadow-actual: var(--card-bg-actual);
 
