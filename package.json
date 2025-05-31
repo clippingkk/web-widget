@@ -1,6 +1,6 @@
 {
   "name": "@annatarhe/clippingkk-widget",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A web component to display Kindle clippings.",
   "main": "dist/clippingkk-web-widget.js",
   "types": "type.d.ts",
