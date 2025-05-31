@@ -3,7 +3,7 @@ import { ClippingService } from './clipping-service'
 import { getWidgetStyles } from './widget-styles'
 
 const CDN_PREFIX = 'https://ck-cdn.annatarhe.com/media/clippingkk'
-const LOGO_URL = 'https://ck-cdn.annatarhe.cn/logo-small.png'
+const LOGO_URL = 'https://ck-cdn.annatarhe.cn/ck-assets/logo.png'
 const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.com'
 
 class ClippingkkWebWidget extends HTMLElement {
