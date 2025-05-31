@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.10](https://github.com/clippingkk/web-widget/compare/v0.0.9...v0.0.10) (2025-05-31)
+
+
+### Bug Fixes
+
+* **docs:** update README with comprehensive usage guide and API documentation ([499c191](https://github.com/clippingkk/web-widget/commit/499c191766e51301db6af16765e4402211bed1a3))
+
 ## [0.0.9](https://github.com/clippingkk/web-widget/compare/v0.0.8...v0.0.9) (2025-05-31)
 
 
