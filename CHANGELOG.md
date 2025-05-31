@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.7](https://github.com/clippingkk/web-widget/compare/v0.0.6...v0.0.7) (2025-05-31)
+
+
+### Bug Fixes
+
+* **pkg:** export widget registration types and functions for external use ([f3ac9f5](https://github.com/clippingkk/web-widget/commit/f3ac9f57a4a77aa512fd298929f67fcb4aed7dbe))
+
 ## [0.0.6](https://github.com/clippingkk/web-widget/compare/v0.0.5...v0.0.6) (2025-05-31)
 
 
