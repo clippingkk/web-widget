@@ -6,7 +6,7 @@ const CDN_PREFIX = 'https://ck-cdn.annatarhe.com/media/clippingkk'
 const LOGO_URL = 'https://ck-cdn.annatarhe.cn/logo-small.png'
 const WEBSITE_ENDPOINT = 'https://clippingkk.annatarhe.com'
 
-export class ClippingkkWebWidget extends HTMLElement {
+class ClippingkkWebWidget extends HTMLElement {
   private _clippingId: string | null = null
   private _theme: Theme = 'light'
   private _endpoint: URL = new URL('https://clippingkk.annatarhe.com/api/v2/graphql')
@@ -142,6 +142,20 @@ export class ClippingkkWebWidget extends HTMLElement {
   }
 }
 
-if (!customElements.get('clippingkk-web-widget')) {
-  customElements.define('clippingkk-web-widget', ClippingkkWebWidget)
+const widgetName = 'clippingkk-web-widget'
+
+function register() {
+  if (customElements.get(widgetName)) {
+    return
+  }
+  customElements.define(widgetName, ClippingkkWebWidget)
+}
+
+export {
+  register,
+  widgetName,
+}
+
+export type {
+  ClippingData,
 }

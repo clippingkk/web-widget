@@ -7,7 +7,7 @@ declare module 'react' {
         'clipping-id'?: number;
         theme?: 'light' | 'dark';
         endpoint?: string;
-        // stringified json
+        /** ClippingData */
         'clipping-data'?: string;
       };
     }
