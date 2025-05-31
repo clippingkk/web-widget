@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.6](https://github.com/clippingkk/web-widget/compare/v0.0.5...v0.0.6) (2025-05-31)
+
+
+### Bug Fixes
+
+* **clipping:** add clipping data prop and update widget styling with new gradient background ([5ea2134](https://github.com/clippingkk/web-widget/commit/5ea2134a63fd4fe9cdc78810161157db2a9da4a3))
+* **widget:** expose widget registration function and improve type documentation ([bdc3bea](https://github.com/clippingkk/web-widget/commit/bdc3beaf834fa203e6a977e0e14ad1449b8bd3e5))
+
 ## [0.0.5](https://github.com/clippingkk/web-widget/compare/v0.0.4...v0.0.5) (2025-05-30)
 
 
